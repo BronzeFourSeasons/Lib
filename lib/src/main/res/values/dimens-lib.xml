@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title">35dp</dimen>
+    <dimen name="login">11dp</dimen>
+    <dimen name="login_et">50dp</dimen>
+</resources>

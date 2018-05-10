@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><!--小标题栏-->
+    <declare-styleable name="MinTitleView">
+        <!--显示内容-->
+        <attr name="text" format="string" />
+        <!--该内容颜色-->
+        <attr name="color" format="color" />
+    </declare-styleable>
+</resources>
