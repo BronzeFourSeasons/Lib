@@ -2,6 +2,8 @@ package com.whf.android.jar;
 
 import android.support.annotation.NonNull;
 
+import com.whf.android.jar.net.OnProgressListener;
+import com.whf.android.jar.net.ProgressDownloadInterceptor;
 import com.whf.android.jar.tool.InterceptorT;
 import com.whf.android.jar.tool.Observer;
 
@@ -26,6 +28,7 @@ public abstract class RetrofitT {
 
     private static Retrofit mRetrofit;
     private static OkHttpClient mOkHttpClient;
+    private static final int DEFAULT_TIMEOUT = 15;
 
     /**
      * Getting Retrofit objects
@@ -42,6 +45,33 @@ public abstract class RetrofitT {
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(mOkHttpClient)
+                    .build();
+        }
+        return mRetrofit;
+    }
+
+    /**
+     * Getting Retrofit objects
+     *
+     * @return Retrofit
+     */
+    protected static Retrofit getRetrofit(@NonNull String baseUrl, OnProgressListener listener) {
+        if (null == mRetrofit) {
+            /**
+             * 进度 下载  拦截器
+             */
+            ProgressDownloadInterceptor mInterceptor = new ProgressDownloadInterceptor(listener);
+
+            OkHttpClient httpClient = new OkHttpClient.Builder()
+                    .addInterceptor(mInterceptor)
+                    .retryOnConnectionFailure(true)
+                    .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                    .build();
+            mRetrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .client(httpClient)
                     .build();
         }
         return mRetrofit;
