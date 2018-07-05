@@ -31,7 +31,8 @@ import java.util.List;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public class DateTimePop extends PopupWindow implements CalendarView.OnDateChangeListener, TimePicker.OnTimeChangedListener, View.OnClickListener {
+public class DateTimePop extends PopupWindow implements CalendarView.OnDateChangeListener,
+    TimePicker.OnTimeChangedListener, View.OnClickListener {
 
     private int TYPE = 0;
     private int resource;
@@ -95,6 +96,9 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
         initDateTime();
     }
 
+     /**
+     * 初始化时间
+     */
     private void initDateTime() {
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd");
@@ -124,19 +128,6 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
         this.setBackgroundDrawable(dw);
     }
 
-//    /**
-//     * 判断获取触屏位置如果在选择框外面则销毁弹出框
-//     * 同时防止多个弹框同时出现
-//     */
-//    @Override
-//    public boolean onTouch(View v, MotionEvent event) {
-//        int height = mMenuView.findViewById(resource).getTop();
-//        int y = (int) event.getY();
-//        if (event.getAction() == MotionEvent.ACTION_UP && y < height) {
-//            dismiss();
-//        }
-//        return true;
-//    }
 
     /**
      * 显示出来
