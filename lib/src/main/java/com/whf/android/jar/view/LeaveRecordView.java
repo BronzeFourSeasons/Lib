@@ -50,16 +50,15 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
     public LeaveRecordView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        // 加载布局
-        LayoutInflater.from(context).inflate(layout.leave_record, this);
         // 获取控件
-        mListView = (ListView) findViewById(id.listView);
-
+        mListView = new ListView(context);
+        // 获得控件属性
         TypedArray typed = context.obtainStyledAttributes(attrs, styleable.LeaveRecordView);//TypedArray是一个数组容器
         itemColor = (int) typed.getColor(styleable.LeaveRecordView_itemColor, 0x00000000);
         divider = typed.getDrawable(styleable.LeaveRecordView_itemDivider);
         dividerHeight = typed.getDimensionPixelSize(styleable.LeaveRecordView_itemDividerHeight,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics()));
+        //初始化控件及属性
         initView();
     }
 
