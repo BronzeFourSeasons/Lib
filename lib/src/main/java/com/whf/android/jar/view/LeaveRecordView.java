@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.whf.android.jar.R.drawable;
 import com.whf.android.jar.R.id;
 import com.whf.android.jar.R.layout;
 import com.whf.android.jar.R.styleable;
@@ -120,11 +121,11 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
             ViewHolder holder;
             if (view == null) {
                 holder = new ViewHolder();
-                view = LayoutInflater.from(context).inflate(R.layout.item_leave_record, null);
-                holder.layout = (RelativeLayout) view.findViewById(R.id.id_item_leave_record);
-                holder.imageView = (ImageView) view.findViewById(R.id.id_imageView);
-                holder.textTitle = (TextView) view.findViewById(R.id.id_textView);
-                holder.textContent = (TextView) view.findViewById(R.id.id_textView_content);
+                view = LayoutInflater.from(context).inflate(layout.item_leave_record, null);
+                holder.layout = (RelativeLayout) view.findViewById(id.id_item_leave_record);
+                holder.imageView = (ImageView) view.findViewById(id.id_imageView);
+                holder.textTitle = (TextView) view.findViewById(id.id_textView);
+                holder.textContent = (TextView) view.findViewById(id.id_textView_content);
                 view.setTag(holder);
             } else {
                 holder = (ViewHolder) view.getTag();
@@ -132,7 +133,7 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
             if (itemColor != 0x00000000) { //颜色不为透明,则设置背景名称.
                 holder.layout.setBackgroundColor(itemColor);
             }
-            holder.imageView.setImageAlpha(R.drawable.shape_red);
+            holder.imageView.setImageAlpha(drawable.shape_red);
             holder.textTitle.setText(mList.get(position).getStrTitle());
             holder.textContent.setText(mList.get(position).getStrContent());
             return view;
