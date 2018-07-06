@@ -7,15 +7,13 @@
 
     <TextView
         android:id="@+id/tv_confirm"
+        style="@style/text_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:padding="15dp"
         android:text="@string/confirm"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
         tools:ignore="RelativeOverlap" />
 
     <com.zzyt.oa.WheelView
