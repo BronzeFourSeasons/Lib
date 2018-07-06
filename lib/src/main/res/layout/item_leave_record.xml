@@ -22,7 +22,7 @@
         android:layout_marginRight="32dp"
         android:gravity="center_vertical"
         android:textSize="16sp"
-        android:padding="@dimen/Margin"
+        android:padding="@dimen/margin"
         android:textStyle="normal"
         android:textColor="@color/black" />
 
