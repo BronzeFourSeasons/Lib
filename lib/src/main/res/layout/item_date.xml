@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:focusedMonthDateColor="#12c8cf"
-        android:selectedDateVerticalBar="@android:color/red"
         android:selectedWeekBackgroundColor="#aff"
         android:startYear="2018"
         android:unfocusedMonthDateColor="#f9f"
