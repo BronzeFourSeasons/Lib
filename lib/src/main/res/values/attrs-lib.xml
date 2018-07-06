@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><!--小标题栏-->
+<resources>
+    <!--小标题栏-->
     <declare-styleable name="MinTitleView">
         <!--显示内容-->
         <attr name="text" format="string" />
         <!--该内容颜色-->
         <attr name="color" format="color" />
     </declare-styleable>
+     <!--列表控件-->
+    <declare-styleable name="LeaveRecordView">
+        <attr name="itemColor" format="color" />
+        <attr name="itemDivider" format="dimension" />
+        <attr name="itemDividerHeight" format="dimension" />
+    </declare-styleable>
+    <!--垂直滑轮控件-->
+    <declare-styleable name="WheelView">
+        <!--单元格高度-->
+        <attr name="unitHeight" format="dimension" />
+        <!--显示多少个内容-->
+        <attr name="itemNumber" format="integer" />
+        <!--未选中文本的颜色-->
+        <attr name="normalTextColor" format="color" />
+        <!--未选中文本的大小-->
+        <attr name="normalTextSize" format="dimension" />
+        <!--选中文本的颜色-->
+        <attr name="selectedTextColor" format="color" />
+        <!--选中文本的大小-->
+        <attr name="selectedTextSize" format="dimension" />
+        <!--线的颜色-->
+        <attr name="lineColor" format="color" />
+        <!--线的宽度-->
+        <attr name="lineHeight" format="dimension" />
+        <!--蒙板高度-->
+        <attr name="maskHeight" format="dimension" />
+        <!--是否允许选空-->
+        <attr name="noEmpty" format="boolean" />
+        <!--是否可用-->
+        <attr name="isEnable" format="boolean" />
+    </declare-styleable>
+
 </resources>
