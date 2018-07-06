@@ -19,8 +19,8 @@ import com.whf.android.jar.R;
 public class ChangeDialog extends Dialog {
 
 
-    private Button yes;//确定按钮
-    private Button no;//取消按钮
+    private Button confirm;//确定按钮
+    private Button cancel;//取消按钮
     private TextView titleTv;//消息标题文本
     private TextView messageTv;//消息提示文本
     private String titleStr;//从外界设置的title文本
@@ -82,7 +82,7 @@ public class ChangeDialog extends Dialog {
      */
     private void initEvent() {
         //设置确定按钮被点击后，向外界提供监听
-        yes.setOnClickListener(new View.OnClickListener() {
+        confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (yesOnclickListener != null) {
@@ -91,7 +91,7 @@ public class ChangeDialog extends Dialog {
             }
         });
         //设置取消按钮被点击后，向外界提供监听
-        no.setOnClickListener(new View.OnClickListener() {
+        cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (noOnclickListener != null) {
@@ -114,10 +114,10 @@ public class ChangeDialog extends Dialog {
         }
         //如果设置按钮的文字
         if (yesStr != null) {
-            yes.setText(yesStr);
+            confirm.setText(yesStr);
         }
         if (noStr != null) {
-            no.setText(noStr);
+            cancel.setText(noStr);
         }
     }
 
@@ -125,8 +125,8 @@ public class ChangeDialog extends Dialog {
      * 初始化界面控件
      */
     private void initView() {
-        yes = (Button) findViewById(R.id.yes);
-        no = (Button) findViewById(R.id.no);
+        confirm = (Button) findViewById(R.id.confirm);
+        cancel = (Button) findViewById(R.id.cancel);
         titleTv = (TextView) findViewById(R.id.title);
         messageTv = (TextView) findViewById(R.id.message);
     }
