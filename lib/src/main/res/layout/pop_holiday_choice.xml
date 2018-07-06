@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/ivory" >
 
     <TextView
         android:id="@+id/tv_confirm"
@@ -19,7 +20,7 @@
     <com.zzyt.oa.WheelView
         android:id="@+id/id_WheelView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="260dp"
         android:layout_below="@id/tv_confirm"
         app:selectedTextColor="@color/black"
         app:normalTextColor="@color/dark_grey"/>
