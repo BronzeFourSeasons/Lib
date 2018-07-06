@@ -9,15 +9,10 @@
         android:layout_height="match_parent" />
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="55dp"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
         android:contentDescription="@string/st_left"
-        android:paddingBottom="9dp"
-        android:paddingEnd="35dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="35dp"
-        android:paddingStart="5dp"
-        android:paddingTop="9dp"
+        android:padding="11dp"
         android:src="@drawable/ic_left" />
 
     <TextView
