@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.whf.android.jar.R.id;
 import com.whf.android.jar.R.layout;
+import com.whf.android.jar.view.WheelView;
 
 import java.util.ArrayList;
 
@@ -46,8 +47,8 @@ public class HolidayChoicePop extends PopupWindow implements View.OnClickListene
     private void initView() {
         resource = id.view_main;
         mMenuView = inflater.inflate(layout.pop_holiday_choice, null);
-        textViewConfirm = mMenuView.findViewById(id.tv_confirm);
-        mWheelView = mMenuView.findViewById(id.id_WheelView);
+        textViewConfirm = (TextView) mMenuView.findViewById(id.tv_confirm);
+        mWheelView = (WheelView) mMenuView.findViewById(id.id_WheelView);
         initAdapter();
         onSetPopup();
     }
