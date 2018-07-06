@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">基类</string>
     <string name="st_left">向左箭头</string>
+   
+    <string name="no">取消</string>
+    <string name="yes">确定</string>
+    <string name="message">提示消息</string>
+    <string name="title">提示</string>
 </resources>
