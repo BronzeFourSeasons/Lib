@@ -17,7 +17,7 @@
         android:text="@string/confirm"
         tools:ignore="RelativeOverlap" />
 
-    <com.zzyt.oa.WheelView
+    <com.whf.android.jar.view.WheelView
         android:id="@+id/id_WheelView"
         android:layout_width="match_parent"
         android:layout_height="260dp"
