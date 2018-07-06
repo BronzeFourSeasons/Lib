@@ -20,7 +20,7 @@
             app:tabSelectedTextColor="@color/black"
             app:tabTextColor="@color/dark_grey"
             app:tabTextAppearance="@android:style/TextAppearance.Holo.Large"
-            app:tabIndicatorColor="@color/colorPrimary">
+            app:tabIndicatorColor="@color/indigo">
 
             <android.support.design.widget.TabItem
                 android:id="@+id/id_tab_item_date"
@@ -54,6 +54,6 @@
     <com.whf.android.jar.change.ChangeNoViewPager
         android:id="@+id/id_ChangeNoViewPager"
         android:layout_width="match_parent"
-        android:layout_height="240dp" />
+        android:layout_height="260dp" />
 
 </LinearLayout>
