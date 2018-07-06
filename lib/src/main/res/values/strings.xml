@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="no">取消</string>
-    <string name="yes">确定</string>
-    <string name="message">提示消息</string>
-    <string name="title">消息提示</string>
-</resources>
