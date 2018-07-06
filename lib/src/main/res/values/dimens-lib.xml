@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="title">35dp</dimen>
+    <!--默认页面边距-->
+    <dimen name="margin">3dp</dimen>
+    <!--默认item间距-->
+    <dimen name="item_margin">9dp</dimen>
     <dimen name="login">11dp</dimen>
+    <dimen name="title">35dp</dimen>
+    <!--默认列表高度-->
+    <dimen name="item_height">45</dimen>
+    <!--默认标题高度-->
+    <dimen name="title_height">55dp</dimen>
     <dimen name="login_et">50dp</dimen>
 </resources>
