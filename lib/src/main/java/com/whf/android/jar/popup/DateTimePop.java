@@ -36,8 +36,7 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
 
     private int TYPE = 0;
     private int resource;
-    private View mMenuView;
-    private View viewDate, viewTime;
+    private View mMenuView,viewDate, viewTime;
     private CalendarView mCalendarView;
     private TimePicker mTimePicker;
     private TabLayout mTabLayout;
@@ -68,11 +67,11 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
         mMenuView = inflater.inflate(layout.pop_date_time, null);
         viewDate = inflater.inflate(layout.item_date, null);
         viewTime = inflater.inflate(layout.item_time, null);
-        tv_confirm = mMenuView.findViewById(id.tv_confirm);
-        mTabLayout = mMenuView.findViewById(id.id_TabLayout);
-        mViewPager = mMenuView.findViewById(id.id_ChangeNoViewPager);
-        mCalendarView = viewDate.findViewById(id.calendarView);
-        mTimePicker = viewTime.findViewById(id.timePicker);
+        tv_confirm = (TextView) mMenuView.findViewById(id.tv_confirm);
+        mTabLayout = (TabLayout) mMenuView.findViewById(id.id_TabLayout);
+        mViewPager = (ChangeNoViewPager) mMenuView.findViewById(id.id_ChangeNoViewPager);
+        mCalendarView = (CalendarView) viewDate.findViewById(id.calendarView);
+        mTimePicker = (TimePicker) viewTime.findViewById(id.timePicker);
         initAdapter();
         onSetPopup();
     }
