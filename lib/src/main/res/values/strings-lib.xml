@@ -8,6 +8,6 @@
     <string name="title">提示</string>
     <string name="todo">图片</string>
     <string name="date">日期</string>
-    <string nmae="time">时间</string>
+    <string name="time">时间</string>
     
 </resources>
