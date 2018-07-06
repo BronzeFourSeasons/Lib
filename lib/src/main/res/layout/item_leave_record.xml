@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_item_leave_record"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/id_imageView"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_margin="19dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/shape_red" />
+
+    <TextView
+        android:id="@+id/id_textView"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:padding="@dimen/Margin"
+        android:textStyle="normal"
+        android:textColor="@color/black" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="7dp"
+        android:background="#e3e3e3" />
+
+    <TextView
+        android:id="@+id/id_textView_content"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="110dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/dim_grey" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="11dp"
+        android:contentDescription="@string/todo"
+        android:src="@mipmap/ic_ab_back_holo_right" />
+
+</RelativeLayout>
