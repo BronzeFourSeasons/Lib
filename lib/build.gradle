@@ -1,5 +1,14 @@
 apply plugin: 'com.android.library'
 
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
