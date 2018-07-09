@@ -47,7 +47,8 @@
         android:layout_height="@dimen/item_height"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:contentDescription="@string/todo"
         android:src="@mipmap/ic_ab_back_holo_right" />
 
