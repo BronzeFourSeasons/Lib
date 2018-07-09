@@ -80,7 +80,7 @@ public class LeaveRecordView extends ListView implements AdapterView.OnItemClick
     private void initView() {
         List<ViewInfo> ls = new ArrayList<>();
         for (String v : Vacation) {
-            ViewInfo info = new ViewInfo(drawable.shape_ash,,v, "按半天请假");
+            ViewInfo info = new ViewInfo(drawable.shape_ash,v, "按半天请假");
             ls.add(info);
         }
         adapter = new LeaveRecordAdapter(ls);
