@@ -25,15 +25,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 休假记录
+ * 休假记录类控件
+ *
+ * @author qf
+ * @author wang.hai.fang
+ * @since 2.5.0
  */
-
-public class LeaveRecordView extends RelativeLayout implements AdapterView.OnItemClickListener {
+public class LeaveRecordView extends ListView implements AdapterView.OnItemClickListener {
 
     //标题数组
     private String[] Vacation = {"item 0", "item 1", "item 2"};
-    // 返回按钮控件
-    private ListView mListView;
     // 上下文
     private Context context;
     //适配器
@@ -50,8 +51,6 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
     public LeaveRecordView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        // 获取控件
-        mListView = new ListView(context);
         // 获得控件属性
         TypedArray typed = context.obtainStyledAttributes(attrs, styleable.LeaveRecordView);//TypedArray是一个数组容器
         itemColor = (int) typed.getColor(styleable.LeaveRecordView_itemColor, 0x00000000);
@@ -81,18 +80,18 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
     private void initView() {
         List<ViewInfo> ls = new ArrayList<>();
         for (String v : Vacation) {
-            ViewInfo info = new ViewInfo(v, "按半天请假");
+            ViewInfo info = new ViewInfo(drawable.shape_ash,,v, "按半天请假");
             ls.add(info);
         }
         adapter = new LeaveRecordAdapter(ls);
-        mListView.setAdapter(adapter);
+        this.setAdapter(adapter);
         if (divider != null) {
-            mListView.setDivider(divider);
+            this.setDivider(divider);
         }
         if (dividerHeight != 0) {
-            mListView.setDividerHeight(dividerHeight);
+            this.setDividerHeight(dividerHeight);
         }
-        mListView.setOnItemClickListener(this);
+        this.setOnItemClickListener(this);
     }
 
     /**
@@ -132,7 +131,7 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
             if (itemColor != 0x00000000) { //颜色不为透明,则设置背景名称.
                 holder.layout.setBackgroundColor(itemColor);
             }
-            holder.imageView.setImageAlpha(drawable.shape_red);
+            holder.imageView.setImageResource(mList.get(position).getResId());
             holder.textTitle.setText(mList.get(position).getStrTitle());
             holder.textContent.setText(mList.get(position).getStrContent());
             return view;
@@ -149,12 +148,27 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
     /**
      * 数据实体类
      */
+    
     public static class ViewInfo {
+        private int resId = drawable.shape_ash;
         private String strTitle = "", strContent = "";
 
-        public ViewInfo(String strTitle, String strContent) {
+        public ViewInfo() {
+            
+        }
+        
+        public ViewInfo(int resId,String strTitle, String strContent) {
+            this.resId = resId;
             this.strTitle = strTitle;
             this.strContent = strContent;
+        }
+
+        public int getResId() {
+            return resId;
+        }
+
+        public void setResId(int resId) {
+            this.resId = resId;
         }
 
         public String getStrTitle() {
@@ -173,7 +187,6 @@ public class LeaveRecordView extends RelativeLayout implements AdapterView.OnIte
             this.strContent = strContent;
         }
     }
-
     /**
      * 控件实体类
      */
