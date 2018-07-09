@@ -17,7 +17,7 @@
     <TextView
         android:id="@+id/id_textView"
         android:layout_width="60dp"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/item_height"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:gravity="center_vertical"
@@ -37,7 +37,7 @@
     <TextView
         android:id="@+id/id_textView_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/item_height"
         android:layout_marginLeft="110dp"
         android:layout_marginRight="110dp"
         android:gravity="center_vertical"
