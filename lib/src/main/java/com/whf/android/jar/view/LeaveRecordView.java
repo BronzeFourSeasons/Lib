@@ -99,7 +99,7 @@ public class LeaveRecordView extends ListView implements AdapterView.OnItemClick
      */
     public void setLeaveRecordAdapter( List<ViewInfo> ls){
         adapter = new LeaveRecordAdapter(ls);
-        mListView.setAdapter(adapter);
+        this.setAdapter(adapter);
     }
 
     /**
