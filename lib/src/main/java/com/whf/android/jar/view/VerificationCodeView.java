@@ -21,7 +21,7 @@ import java.util.Random;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public final class VerificationCodeView extends ImageView {
+public class VerificationCodeView extends ImageView {
 
     public VerificationCodeView(Context context) {
         super(context);
