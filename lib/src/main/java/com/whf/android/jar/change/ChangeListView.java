@@ -11,7 +11,7 @@ import android.widget.ListView;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public final class ChangeListView extends ListView {
+public class ChangeListView extends ListView {
 
     /**
      * @param context:Context
