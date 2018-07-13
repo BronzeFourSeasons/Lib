@@ -12,7 +12,7 @@ import android.view.MotionEvent;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public final class ChangeNoViewPager extends ViewPager {
+public class ChangeNoViewPager extends ViewPager {
 
     /**
      * The default is static sliding
