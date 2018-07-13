@@ -18,7 +18,7 @@ import android.widget.TextView;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public final class AlphabetView extends View {
+public class AlphabetView extends View {
 
     // Listener
     private OnTouchingLetterChangedListener onTouchingLetterChangedListener;
