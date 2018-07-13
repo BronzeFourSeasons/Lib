@@ -163,8 +163,8 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
     /**
      * 设置确认的点击事件
      */
-    public void setStrDate(IListener iListener) {
-        this.iListener = iListener;
+    public void setOnDateTimeListener(OnDateTimeListener onDateTimeListener) {
+        this.iListener = onDateTimeListener;
     }
 
     /**
@@ -223,7 +223,7 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
     /**
      * 接口
      */
-    public interface IListener {
+    public interface OnDateTimeListener {
         void onDateTime(int TYPE, String strDate, String strTime);
     }
 
