@@ -11,7 +11,7 @@ import android.widget.GridView;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public final class ChangeGridView extends GridView {
+public class ChangeGridView extends GridView {
 
     public ChangeGridView(Context context) {
         super(context);
