@@ -96,13 +96,27 @@ public abstract class RetrofitT {
      * Building OkHttpClient objects
      */
     @NonNull
-    private static OkHttpClient getOkHttpClient() {
+    private static OkHttpClient getOkHttpClient2() {
         return new OkHttpClient.Builder()
                 .addInterceptor(new InterceptorT())   //Add interceptor
                 .connectTimeout(10, TimeUnit.SECONDS)        //Set connection timeout
                 .readTimeout(30, TimeUnit.SECONDS)           //Set read timeout
                 .writeTimeout(30, TimeUnit.SECONDS)          //Set write timeout
                 .build();
+    }
+    
+    @NonNull
+    private static OkHttpClient getOkHttpClient() {
+        return new OkHttpClient
+                .Builder()
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        Request.Builder builder = chain.request().newBuilder();
+                        builder.addHeader("Content-Type", "application/x-www-form-urlencoded");
+                        return chain.proceed(builder.build());
+                    }
+                }).build();
     }
 
 }
