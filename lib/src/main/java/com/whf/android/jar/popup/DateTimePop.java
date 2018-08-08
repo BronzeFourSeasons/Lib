@@ -44,7 +44,7 @@ public class DateTimePop extends PopupWindow implements CalendarView.OnDateChang
     private ChangeNoViewPager mViewPager;
     private LayoutInflater inflater;
     private String strDate, strTime;
-    private IListener iListener;
+    private OnDateTimeListener iListener;
     private final static String[] titles = {"日期", "时间"};
     public final static int START_TIME = 11,END_TIME = 12,APPLY_TIME = 13,USE_TIME = 14;
 
