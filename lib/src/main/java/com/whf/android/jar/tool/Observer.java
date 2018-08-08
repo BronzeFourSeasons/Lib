@@ -4,7 +4,7 @@ import com.whf.android.jar.base.BaseApplication;
 
 import java.net.ConnectException;
 import java.net.SocketException;
-import retrofit2.adapter.rxjava.HttpException;
+import retrofit2.HttpException;
 
 /**
  * exception handling
