@@ -15,7 +15,7 @@ import retrofit2.HttpException;
  */
 public abstract class Observer<T> implements io.reactivex.Observer<T> {
 
-    protected abstract void onError(String error);
+    public abstract void onError(String error);
 
     @Override
     public void onError(Throwable e) {
