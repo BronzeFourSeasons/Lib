@@ -53,6 +53,25 @@ public abstract class RetrofitT {
         }
         return mRetrofit;
     }
+    /**
+     * Getting Retrofit objects
+     *
+     * @return Retrofit
+     */
+    protected static Retrofit getRetrofit(@NonNull String baseUrl,boolean bool) {
+        if (bool) {
+            if (null == mOkHttpClient) {
+                mOkHttpClient = getOkHttpClient();
+            }
+            mRetrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .client(mOkHttpClient)
+                    .build();
+        }
+        return mRetrofit;
+    }
 
     /**
      * Getting Retrofit objects
