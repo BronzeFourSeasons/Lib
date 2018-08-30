@@ -2,8 +2,6 @@ package com.whf.android.jar;
 
 import android.util.Log;
 
-import com.whf.android.jar.constants.IConstants;
-
 
 /**
  * @author wang.hai.fang
@@ -13,6 +11,7 @@ import com.whf.android.jar.constants.IConstants;
  */
 public final class LogT {
 
+    private final static String TAG = "TAG";
 
     /**
      * log
@@ -20,11 +19,8 @@ public final class LogT {
      * @param obj:Print string
      */
     public static void i(String obj) {
-        if (obj != null) {
-            System.out.print(IConstants.LOG_TAG + obj);
-        } else {
-            System.out.print(IConstants.LOG_TAG + "");
-        }
+        obj += "";
+        Log.i(TAG, obj);
     }
 
     /**
@@ -33,11 +29,8 @@ public final class LogT {
      * @param obj:Print string
      */
     public static void d(String obj) {
-        if (obj != null) {
-            System.out.print(IConstants.LOG_TAG + obj);
-        } else {
-            System.out.print(IConstants.LOG_TAG + "");
-        }
+        obj += "";
+        Log.d(TAG, obj);
     }
 
     /**
@@ -46,11 +39,8 @@ public final class LogT {
      * @param obj:Print string
      */
     public static void w(String obj) {
-        if (obj != null) {
-            Log.w(IConstants.LOG_TAG, "NO:" + obj);
-        } else {
-            Log.w(IConstants.LOG_TAG, "");
-        }
+        obj += "";
+        Log.w(TAG, obj);
     }
 
     /**
@@ -59,11 +49,8 @@ public final class LogT {
      * @param obj:Print string
      */
     public static void e(String obj) {
-        if (obj != null) {
-            Log.e(IConstants.LOG_TAG, "NO:" + obj);
-        } else {
-            Log.e(IConstants.LOG_TAG, "");
-        }
+        obj += "";
+        Log.e(TAG, obj);
     }
 
     /**
@@ -79,6 +66,4 @@ public final class LogT {
             e(obj + "-NO-");
         }
     }
-
-
 }
