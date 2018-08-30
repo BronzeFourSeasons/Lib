@@ -1,20 +1,25 @@
-apply plugin: 'com.android.library'
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-}
 
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+	}
+}
 allprojects {
     repositories {
         mavenCentral()
-        jcenter()
         maven {
             url 'https://jitpack.io'
         }
     }
 }
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
 
 android {
     compileSdkVersion 26
