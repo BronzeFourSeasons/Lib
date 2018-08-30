@@ -10,8 +10,7 @@ buildscript {
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-
-
+group='com.github.BronzeFourSeasons'
 
 android {
     compileSdkVersion 26
