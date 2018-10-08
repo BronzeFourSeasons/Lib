@@ -9,7 +9,7 @@
     <color name="floral_white">#fffaf0</color> <!-- 花白色 -->
     <color name="lemon_chiffon">#fffacd</color> <!-- 柠檬绸色 -->
     <color name="corn_silk">#fff8dc</color> <!-- 米绸色 -->
-    <color name="seaShell">#fff5ee</color> <!-- 海贝色 -->
+    <color name="sea_shell">#fff5ee</color> <!-- 海贝色 -->
     <color name="lavender_blush">#fff0f5</color> <!-- 淡紫红 -->
     <color name="papaya_whip">#ffefd5</color> <!-- 番木色 -->
     <color name="blanched_almond">#ffebcd</color> <!-- 白杏色 -->
@@ -62,7 +62,6 @@
     <color name="orchid">#da70d6</color> <!-- 淡紫色 -->
     <color name="thistle">#d8bfd8</color> <!-- 蓟色 -->
     <color name="light_gray">#d3d3d3</color> <!-- 亮灰色 -->
-    <color name="light_grey">#d3d3d3</color> <!-- 亮灰色 -->
     <color name="tan">#d2b48c</color> <!-- 茶色 -->
     <color name="chocolate">#d2691e</color> <!-- 巧可力色 -->
     <color name="peru">#cd853f</color> <!-- 秘鲁色 -->
