@@ -9,7 +9,7 @@
         android:layout_height="match_parent" />
 
     <ImageView
-        android:layout_width="35dp"
+        android:layout_width="@dimen/margi_title"
         android:layout_height="match_parent"
         android:contentDescription="@string/st_left"
         android:padding="11dp"
@@ -20,12 +20,12 @@
         style="@style/text_max"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
+        android:layout_marginLeft="@dimen/margi_title"
+        android:layout_marginStart="@dimen/margi_title"
         android:gravity="center_vertical"
         android:textColor="@color/white"
-        android:typeface="monospace" />
-
+        android:typeface="monospace"
+        android:text="@string/revert" />
 
     <Button
         android:id="@+id/id_return"
