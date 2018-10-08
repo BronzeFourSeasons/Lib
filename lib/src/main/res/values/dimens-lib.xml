@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--默认页面边距-->
+    <dimen name="one">1dp</dimen>
+    <dimen name="two">2dp</dimen>
     <dimen name="margin">3dp</dimen>
-    <!--默认item间距-->
-    <dimen name="item_margin">9dp</dimen>
-    <dimen name="login">11dp</dimen>
-    <dimen name="title">35dp</dimen>
-    <!--默认列表高度-->
-    <dimen name="item_height">45dp</dimen>
-    <!--默认标题高度-->
-    <dimen name="title_height">55dp</dimen>
-    <dimen name="login_et">50dp</dimen>
+    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_item">16dp</dimen>
+    <dimen name="margin_title">32dp</dimen>
+    <dimen name="height_menu">40dp</dimen>
+    <dimen name="height_item">48dp</dimen>
+    <dimen name="height_title">54dp</dimen>
 </resources>
