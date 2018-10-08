@@ -54,6 +54,6 @@
         <attr name="waveLength" format="integer"/>
         <!--水波纹的长度-->
         <attr name="waveColor" format="color"/>
-
     </declare-styleable>
+    
 </resources>
