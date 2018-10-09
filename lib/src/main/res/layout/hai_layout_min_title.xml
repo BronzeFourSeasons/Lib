@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/title_height">
+    android:layout_height="@dimen/height_title">
 
     <TextView
         android:id="@+id/id_textBack"
@@ -9,23 +9,23 @@
         android:layout_height="match_parent" />
 
     <ImageView
-        android:layout_width="@dimen/margi_title"
+        android:layout_width="@dimen/height_menu"
         android:layout_height="match_parent"
         android:contentDescription="@string/st_left"
-        android:padding="11dp"
-        android:src="@drawable/ic_left" />
+        android:padding="@dimen/margin_default"
+        android:src="@mipmap/ic_left" />
 
     <TextView
         android:id="@+id/id_textTitle"
         style="@style/text_max"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margi_title"
-        android:layout_marginStart="@dimen/margi_title"
+        android:layout_marginLeft="@dimen/margin_item"
+        android:layout_marginStart="@dimen/margin_item"
         android:gravity="center_vertical"
         android:textColor="@color/white"
         android:typeface="monospace"
-        android:text="@string/revert" />
+        android:text="@string/revert"/>
 
     <Button
         android:id="@+id/id_return"
@@ -34,5 +34,3 @@
         android:background="@null" />
 
 </RelativeLayout>
-
-
