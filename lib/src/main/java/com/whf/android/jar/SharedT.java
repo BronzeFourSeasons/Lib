@@ -15,7 +15,36 @@ import android.support.annotation.Nullable;
  */
 public final class SharedT {
 
+     /**
+     * storage string
+     *
+     * @param context:Context
+     * @param storage_file:storage file name
+     * @param key:key
+     * @param value:value
+     * @return true:OK
+     */
+    public static boolean putString(Context context, @Nullable String storage_file, String key, @Nullable Set<String> value) {
+        SharedPreferences sp = context.getSharedPreferences(storage_file,Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putStringSet(key, value);
+        return editor.commit();
+    }
 
+    /**
+     * get storage string
+     *
+     * @param context:Context
+     * @param storage_file:storage file name
+     * @param key:key
+     * @return true:OK
+     */
+    public static Set<String> getString(Context context, @Nullable String storage_file, String key) {
+        Set<String> value = new HashSet<>();
+        SharedPreferences sp = context.getSharedPreferences(storage_file, Activity.MODE_PRIVATE);
+        return sp.getStringSet(key, value);
+    }
+    
     /**
      * storage string
      *
