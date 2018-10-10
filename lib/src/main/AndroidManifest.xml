@@ -1,3 +1,13 @@
-<manifest  package="com.whf.android.jar">
-
+<manifest package="com.whf.android.jar"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!--提示弹框-->
+        <activity android:name=".act.DiaActivity"
+            android:theme="@style/DialogTheme" />
+        <!--提示输入弹框-->
+        <activity android:name=".act.DiaInputActivity"
+            android:theme="@style/DialogTheme" />
+        <!--PDF预览页-->
+        <activity android:name=".act.PDFDatabaseActivity" />
+    </application>
 </manifest>
