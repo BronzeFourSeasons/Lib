@@ -41,3 +41,31 @@ NetT.open4GSetting();  --打开4G网络设置界面
 
 base.BaseCommonAdapter --对BaseAdapter简写；
 
+--在线预览pdf文件
+ Bundle bundle = new Bundle();
+ bundle.putString(IConstant.PDF_URL, "http://1.12.123.14:55/tkke.pdf");
+ startActivity(IntentT.onIntent(context, PDFDatabaseActivity.class, bundle));
+
+--弹框输入提示输入界面
+Bundle bundle = new Bundle();
+bundle.putString(DiaInputActivity.TITLE, "设置标题");
+bundle.putString(DiaInputActivity.MESSAGE, "设置输入提示");
+bundle.putString(DiaInputActivity.BUTTON_1, "设置按钮1显示值");
+bundle.putString(DiaInputActivity.BUTTON_2, "设置按钮2显示值");
+startActivityForResult(IntentT.onIntent(context, DiaInputActivity.class, bundle), DiaInputActivity.INT_INTENT);
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == DiaInputActivity.INT_INTENT && resultCode == DiaInputActivity.INT_INTENT) {
+            int v = data.getIntExtra(DiaInputActivity.KEY, 0);--按钮判断
+            String opinion = data.getStringExtra(DiaInputActivity.OPINION);--输入的值
+            LogT.i("KEY>>" + v + " type>>" + type + " opinion>>" + opinion);
+            if (DiaInputActivity.INT_YES == v) {
+                
+            }
+        }
+   }
+--http上传类型
+IMediaType.MEDIA_PNG,
+IMediaType.MEDIA_JPG,
