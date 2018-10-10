@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Local storage tools class
