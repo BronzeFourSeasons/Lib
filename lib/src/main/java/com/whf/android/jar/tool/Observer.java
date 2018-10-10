@@ -1,9 +1,13 @@
 package com.whf.android.jar.tool;
 
+import com.whf.android.jar.LogT;
 import com.whf.android.jar.base.BaseApplication;
 
 import java.net.ConnectException;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
+
+import io.reactivex.disposables.Disposable;
 import retrofit2.HttpException;
 
 /**
