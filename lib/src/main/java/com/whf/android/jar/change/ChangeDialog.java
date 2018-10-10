@@ -58,7 +58,7 @@ public class ChangeDialog extends Dialog {
     }
 
     public ChangeDialog(Context context) {
-        super(context, R.style.MyDialog);
+        super(context, R.style.DialogMy);
     }
 
     @Override
