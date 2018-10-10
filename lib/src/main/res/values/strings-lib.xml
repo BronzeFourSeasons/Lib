@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">基类</string>
     <string name="st_left">向左箭头</string>
-   
     <string name="cancel">取消</string>
     <string name="confirm">确定</string>
     <string name="message">提示消息</string>
@@ -13,12 +12,12 @@
     <string name="journal">日</string>
     <string name="weekly">周</string>
     <string name="pdf_hint">注: 左右滑动切换上一页或者下一页</string>
+    <string name="load">正在加载&#8230;</string>
     <string name="mo">星期一</string>
     <string name="tu">星期二</string>
     <string name="we">星期三</string>
     <string name="th">星期四</string>
     <string name="fr">星期五</string>
     <string name="sa">星期六</string>
-    <string name="su">星期日</string>
-    
+    <string name="su">星期日</string>    
 </resources>
