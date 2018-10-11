@@ -57,9 +57,9 @@ base.BaseCommonAdapter --对BaseAdapter简写；
 >             String opinion = data.getStringExtra(DiaInputActivity.OPINION);--输入的值
 >             LogT.i("KEY>>" + v + " type>>" + type + " opinion>>" + opinion);
 >             if (DiaInputActivity.INT_YES == v) {    
->             }
->         }
->    }
+>###             }
+>###         }
+>###    }
 
 ## 9.http上传类型 ##
 IMediaType.MEDIA_PNG,
