@@ -10,15 +10,11 @@
 -keep class okio.**{*;}
 
 # Retrofit
--dontnote retrofit2.Platform -dontnote retrofit2.Platform$IOS$MainThreadExecutor
--dontwarn retrofit2.Platform$Java8
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
 -keepattributes Signature-keepattributes Exceptions
--keepattributes Signature
--keepattributes Exceptions
 
-# okhttp
+# RxJava RxAndroid
 -dontwarn sun.misc.** -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
     long producerIndex;
     long consumerIndex;
