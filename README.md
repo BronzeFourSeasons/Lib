@@ -42,7 +42,7 @@ base.BaseCommonAdapter --对BaseAdapter简写；
  startActivity(IntentT.onIntent(context, PDFDatabaseActivity.class, bundle));
 
 ## 8.弹框输入提示输入界面 ##
-- Bundle bundle = new Bundle();
+> Bundle bundle = new Bundle();
 - bundle.putString(DiaInputActivity.TITLE, "设置标题");
 - bundle.putString(DiaInputActivity.MESSAGE, "设置输入提示");
 - bundle.putString(DiaInputActivity.BUTTON_1, "设置按钮1显示值");
@@ -56,8 +56,7 @@ base.BaseCommonAdapter --对BaseAdapter简写；
 -             int v = data.getIntExtra(DiaInputActivity.KEY, 0);--按钮判断
 -             String opinion = data.getStringExtra(DiaInputActivity.OPINION);--输入的值
 -             LogT.i("KEY>>" + v + " type>>" + type + " opinion>>" + opinion);
--             if (DiaInputActivity.INT_YES == v) {
--                 
+-             if (DiaInputActivity.INT_YES == v) {    
 -             }
 -         }
 -    }
