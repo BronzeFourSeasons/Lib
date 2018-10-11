@@ -1,4 +1,4 @@
-GlideAPI
+# GlideAPI #
 
 ## 加载图片 ##
 onImage(int url, ImageView view)
@@ -22,11 +22,10 @@ onGif(Context act, Integer url, ImageView view)
 ##  加载圆形图片--如头像 ## 
 onCircularImage(Context act, String url, ImageView view) 
 
-##  /**
+/**
  * 加载圆角图片
  * @param dp:圆角幅度
  */
- ## 
 onRoundImage(Context act, String url, ImageView view, int dp)
 
 /**
