@@ -42,6 +42,7 @@ base.BaseCommonAdapter --对BaseAdapter简写；
  startActivity(IntentT.onIntent(context, PDFDatabaseActivity.class, bundle));
 
 # 弹框输入提示输入界面 #
+'''
 Bundle bundle = new Bundle();
 bundle.putString(DiaInputActivity.TITLE, "设置标题");
 bundle.putString(DiaInputActivity.MESSAGE, "设置输入提示");
@@ -61,6 +62,7 @@ startActivityForResult(IntentT.onIntent(context, DiaInputActivity.class, bundle)
             }
         }
    }
+'''
 # http上传类型 # 
 IMediaType.MEDIA_PNG,
 IMediaType.MEDIA_JPG,
