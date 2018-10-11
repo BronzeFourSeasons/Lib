@@ -2,13 +2,7 @@
 我的项目基础
 
 # 引入方式： #
-1.在项目bulid.gradle中添加
-allprojects {
-repositories {
-    jcenter()
-    maven { url 'https://jitpack.io' }
-}
-2.在app的bulid.gradle中添加引用  
+![引入方式](https://github.com/BronzeFourSeasons/Lib/blob/master/API/UseBag.png)
 
 
 # 具体使用步骤： #
