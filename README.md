@@ -43,23 +43,23 @@ base.BaseCommonAdapter --对BaseAdapter简写；
 
 ## 8.弹框输入提示输入界面 ##
 > Bundle bundle = new Bundle();
-- bundle.putString(DiaInputActivity.TITLE, "设置标题");
-- bundle.putString(DiaInputActivity.MESSAGE, "设置输入提示");
-- bundle.putString(DiaInputActivity.BUTTON_1, "设置按钮1显示值");
-- bundle.putString(DiaInputActivity.BUTTON_2, "设置按钮2显示值");
-- startActivityForResult(IntentT.onIntent(context, DiaInputActivity.class, bundle), DiaInputActivity.INT_INTENT);
+> bundle.putString(DiaInputActivity.TITLE, "设置标题");
+> bundle.putString(DiaInputActivity.MESSAGE, "设置输入提示");
+> bundle.putString(DiaInputActivity.BUTTON_1, "设置按钮1显示值");
+> bundle.putString(DiaInputActivity.BUTTON_2, "设置按钮2显示值");
+> startActivityForResult(IntentT.onIntent(context, DiaInputActivity.class, bundle), DiaInputActivity.INT_INTENT);
 
--   @Override
--   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
--         super.onActivityResult(requestCode, resultCode, data);
--         if (requestCode == DiaInputActivity.INT_INTENT && resultCode == DiaInputActivity.INT_INTENT) {
--             int v = data.getIntExtra(DiaInputActivity.KEY, 0);--按钮判断
--             String opinion = data.getStringExtra(DiaInputActivity.OPINION);--输入的值
--             LogT.i("KEY>>" + v + " type>>" + type + " opinion>>" + opinion);
--             if (DiaInputActivity.INT_YES == v) {    
--             }
--         }
--    }
+>   @Override
+>   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+>         super.onActivityResult(requestCode, resultCode, data);
+>         if (requestCode == DiaInputActivity.INT_INTENT && resultCode == DiaInputActivity.INT_INTENT) {
+>             int v = data.getIntExtra(DiaInputActivity.KEY, 0);--按钮判断
+>             String opinion = data.getStringExtra(DiaInputActivity.OPINION);--输入的值
+>             LogT.i("KEY>>" + v + " type>>" + type + " opinion>>" + opinion);
+>             if (DiaInputActivity.INT_YES == v) {    
+>             }
+>         }
+>    }
 
 ## 9.http上传类型 ##
 IMediaType.MEDIA_PNG,
