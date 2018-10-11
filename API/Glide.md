@@ -1,16 +1,16 @@
 GlideAPI
 
-加载图片 
+--加载图片 
 onImage(int url, ImageView view)
-加载图片 
+--加载图片 
 onImage(Context act, int url, ImageView view)
-加载图片 
+--加载图片 
 onImage(Context act, String url, ImageView view)
-加载图片 
+--加载图片 
 onImage(Activity act, int url, ImageView view)
-加载图片 
+--加载图片 
 onImage(android.app.Fragment fragment, int url, ImageView view)
-加载图片 
+--加载图片 
 onImage(android.support.v4.app.Fragment fragment, int url, ImageView view)
 
 加载gif
