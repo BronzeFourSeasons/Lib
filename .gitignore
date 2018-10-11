@@ -5,6 +5,7 @@
 /.idea/libraries
 .DS_Store
 /build
+/API
 /captures
 .externalNativeBuild
 ./gradlew install
