@@ -91,5 +91,18 @@ public class MinTitleView extends LinearLayout {
         textBack.setBackgroundColor(titleColor);
         BarColorT.initSystemBar((Activity) getContext(), titleColor);
     }
+    
+    @Override
+	public void setBackgroundResource(int resId) {
+        textBack.setBackgroundResource(resId);
+    }
 
+    @Override
+    public void setBackgroundColor(int color) {
+        textBack.setBackgroundColor(color);
+    }
+    @Override
+    public void setBackground(Drawable background) {
+        textBack.setBackground(background);
+    }
 }
