@@ -86,10 +86,18 @@ public class MinTitleView extends LinearLayout {
         String title = a.getString(R.styleable.MinTitleView_text);
         int titleColor = a.getColor(R.styleable.MinTitleView_color, 0xff1e90ff);
         if (title != null && !"".equals(title)) {
-            text.setText(title);
+            setTextBack(title);
         }
         textBack.setBackgroundColor(titleColor);
         BarColorT.initSystemBar((Activity) getContext(), titleColor);
+    }
+	
+    public void setText(String title) {
+        textBack.setText(title);
+    }
+
+    public void setTextBack(String title) {
+        text.setText(title);
     }
     
     @Override
