@@ -15,7 +15,8 @@
 -keepattributes Signature-keepattributes Exceptions
 
 # RxJava RxAndroid
--dontwarn sun.misc.** -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+-dontwarn sun.misc.** 
+-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
     long producerIndex;
     long consumerIndex;
 }
