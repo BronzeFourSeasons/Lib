@@ -110,13 +110,13 @@ public class MinTitleView extends LinearLayout {
      * 设置标题颜色
      */
     public void setTextColor(int color) {
-        textBack.setTextColor(title);
+        textBack.setTextColor(color);
     }
    /**
      * 设置返回颜色
      */
     public void setTextBackColor(int color) {
-        text.setTextColor(title);
+        text.setTextColor(color);
     }
 	
     /**
