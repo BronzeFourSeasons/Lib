@@ -93,23 +93,51 @@ public class MinTitleView extends LinearLayout {
         BarColorT.initSystemBar((Activity) getContext(), titleColor);
     }
 	
+   /**
+     * 设置标题
+     */
     public void setText(String title) {
         textBack.setText(title);
     }
-
+	
+   /**
+     * 设置返回展示
+     */
     public void setTextBack(String title) {
         text.setText(title);
     }
-    
+   /**
+     * 设置标题颜色
+     */
+    public void setTextColor(int color) {
+        textBack.setTextColor(title);
+    }
+   /**
+     * 设置返回颜色
+     */
+    public void setTextBackColor(int color) {
+        text.setTextColor(title);
+    }
+	
+    /**
+     * 设置背景颜色
+     */
     @Override
 	public void setBackgroundResource(int resId) {
         textBack.setBackgroundResource(resId);
     }
-
+	
+    /**
+     * 设置背景颜色
+     */
     @Override
     public void setBackgroundColor(int color) {
         textBack.setBackgroundColor(color);
     }
+		
+    /**
+     * 设置背景颜色
+     */
     @Override
     public void setBackground(Drawable background) {
         textBack.setBackground(background);
