@@ -9,6 +9,8 @@
 
 GlideT [加载图片工具类](https://github.com/BronzeFourSeasons/Lib/blob/master/API/Glide.md#glideapi)
 
+DensityUtil[常用单位转换的辅助类](https://github.com/BronzeFourSeasons/Lib/blob/master/API/Density.md#glideapi)
+
 ##  1.界面跳转 ##
 >#### IntentT.onIntent(this,xxxx.class); 
 >#### IntentT.onIntent(this,xxxx.class,mBundle); --带参数或不带参数跳转。
@@ -64,3 +66,5 @@ base.BaseCommonAdapter --对BaseAdapter简写；
 ## 9.http上传类型 ##
 >#### IMediaType.MEDIA_PNG,
 >#### IMediaType.MEDIA_JPG,
+
+
