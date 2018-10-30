@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 
 import com.whf.android.jar.LogT;
 import com.whf.android.jar.R;
+import com.whf.android.jar.layout.SwipeRefreshLayout;
 import com.whf.android.jar.view.MinTitleView;
 
 import java.util.List;
