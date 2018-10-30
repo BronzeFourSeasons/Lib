@@ -61,4 +61,14 @@
         <item name="android:textColorHint">@color/dim_gray</item>
         <item name="android:textStyle">normal</item>
     </style>
+    
+    <!-- 自定义刷新的状态 -->
+    <declare-styleable name="SwipeRefreshLayout">
+        <attr name="srl_direction">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+    </declare-styleable>
+    
 </resources>
