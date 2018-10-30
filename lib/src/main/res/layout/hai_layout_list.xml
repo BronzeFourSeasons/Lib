@@ -54,17 +54,18 @@
             android:src="@mipmap/no_data"
             android:visibility="gone" />
 
-        <android.support.v4.widget.SwipeRefreshLayout
+        <com.whf.android.jar.layout.SwipeRefreshLayout
             android:id="@+id/hai_main_srl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:srl_direction="both">
 
             <ListView
                 android:id="@+id/hai_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+        </com.whf.android.jar.layout.SwipeRefreshLayout>
 
         <ProgressBar
             android:id="@+id/hai_pb_bar"
