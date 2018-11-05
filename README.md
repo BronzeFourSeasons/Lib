@@ -67,4 +67,17 @@ base.BaseCommonAdapter --对BaseAdapter简写；
 >#### IMediaType.MEDIA_PNG,
 >#### IMediaType.MEDIA_JPG,
 
+## 10. 时间弹框选择器 ##
+>####     DateTimePop dateTimePop;
+>####     dateTimePop = new DateTimePop(context);
+>####     dateTimePop.setOnDateTimeListener(new DateTimePop.OnDateTimeListener() {
+>####           @Override
+>####           public void onDateTime(int TYPE, String strDate, String strTime) {
+>####                 String mDateTime = strDate + " " + strTime;   
+>####           }
+>####     });
+>####     dateTimePop.setStrType(DateTimePop.START_TIME);
+>####     //layout_vacation是页面的ID
+>####     dateTimePop.show(findViewById(R.id.layout_vacation));
+
 
