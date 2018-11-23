@@ -50,7 +50,6 @@ public class MinTitleView extends LinearLayout {
      */
     private void initView() {
         LayoutInflater.from(context).inflate(R.layout.hai_layout_min_title, this, true);
-
         text = getView(R.id.id_textTitle);
         textBack = getView(R.id.id_textBack);
         imageViewMore = getView(R.id.image_more);
@@ -97,8 +96,8 @@ public class MinTitleView extends LinearLayout {
         @SuppressLint("Recycle")
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MinTitleView);
         String titleBack = a.getString(R.styleable.MinTitleView_textBack);
-        String title =  a.getString(R.styleable.MinTitleView_android_text);
-        int titleColor = a.getColor(R.styleable.MinTitleView_color, 0xff1e90ff);
+        String title = a.getString(R.styleable.MinTitleView_android_text);
+        int titleColor = a.getColor(R.styleable.MinTitleView_color, 0xFF1E90FF);
         String textMore = a.getString(R.styleable.MinTitleView_textMore);
         int resMore = a.getResourceId(R.styleable.MinTitleView_moreImage, 0xff1e90ff);
         int is = a.getInteger(R.styleable.MinTitleView_isMoreDisplay, -3);
@@ -106,10 +105,9 @@ public class MinTitleView extends LinearLayout {
             setText(title);
         }
         if (titleBack != null && !"".equals(titleBack)) {
-            setTextBack(title);
+            setTextBack(titleBack);
         }
-        
-        textBack.setBackgroundColor(titleColor);
+        text.setBackgroundColor(titleColor);
         BarColorT.initSystemBar((Activity) getContext(), titleColor);
 
         if (textMore != null && !"".equals(textMore)) {
@@ -142,8 +140,8 @@ public class MinTitleView extends LinearLayout {
     /**
      * 设置返回展示
      */
-    public void setTextBack(String title) {
-        textBack.setText(title);
+    public void setTextBack(String titleBack) {
+        textBack.setText(titleBack);
     }
 
     /**
