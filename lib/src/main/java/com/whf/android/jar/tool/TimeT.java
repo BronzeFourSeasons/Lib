@@ -59,8 +59,18 @@ public final class TimeT {
      * @return yyyy-MM-dd
      */
     public static String formatData(long timeStamp) {
-        Double s = Math.pow(10, 10);
         String dataFormat = "yyyy-MM-dd HH:mm:ss";
+        return formatData(timeStamp,dataFormat);
+    }
+    
+     /**
+     * Time cut is converted to time
+     *
+     * @param timeStamp 1414994 617
+     * @return yyyy-MM-dd
+     */
+    public static String formatData(long timeStamp,String dataFormat ) {
+        Double s = Math.pow(10, 10);
         if (timeStamp == 0) {
             return "";
         } else if (timeStamp > s && timeStamp < s * 10) {
