@@ -80,4 +80,25 @@ base.BaseCommonAdapter --对BaseAdapter简写；
 >####     //layout_vacation是页面的ID
 >####     dateTimePop.show(findViewById(R.id.layout_vacation));
 
-
+## 11. 标题控件 ##
+>#### <com.whf.android.jar.view.MinTitleView
+>####         android:id="@+id/hai_MinTitleView"
+>####         android:layout_width="match_parent"
+>####         android:layout_height="54dp"
+>####         android:text="@string/app_name"
+>####         app:isMoreDisplay="display_image"           - 显示图片   
+>####         app:moreImage="@mipmap/default_head_image"  - 右边的图标
+>####         app:textBack="返回" />                      - 左边的文字
+>###     使用
+>#### minTitleView.setOnClickMoreListener(new View.OnClickListener() {
+>####            @Override
+>####            public void onClick(View view) {
+>####                ToastT.makeTextShort(MainActivity.this, " 点击右边图标");
+>####            }
+>####        });
+>#### minTitleView.setOnClickListener(new View.OnClickListener() {
+>####            @Override
+>####            public void onClick(View view) {
+>####                ToastT.makeTextShort(MainActivity.this, " 点击左边图标");
+>####            }
+>####        });
