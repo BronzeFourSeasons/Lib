@@ -49,12 +49,14 @@
 
     <TextView
         android:id="@+id/tv_more"
+        style="@style/text_max"
         android:layout_width="@dimen/margin_title"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="@dimen/margin_default"
         android:layout_marginRight="@dimen/margin_default"
+        android:textColor="@color/white"
         android:gravity="center"
         android:padding="@dimen/margin"
         android:visibility="gone" />
