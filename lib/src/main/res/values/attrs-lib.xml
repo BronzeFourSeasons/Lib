@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--小标题栏-->
+     <!--小标题栏-->
     <declare-styleable name="MinTitleView">
-        <!--显示内容-->
-        <attr name="text" format="string" />
+        <attr name="android:text" />
+        <!--返回键显示内容-->
+        <attr name="textBack" format="string" />
         <!--该内容颜色-->
         <attr name="color" format="color" />
+        <!--判断是图片还是文字-->
+        <attr name="isMoreDisplay" format="integer">
+            <enum name="display_image" value="-1" />
+            <enum name="display_text" value="-2" />
+            <enum name="display_no" value="-3" />
+        </attr>
+        <!--显示内容-->
+        <attr name="textMore" format="string" />
+        <!--该内容颜色-->
+        <attr name="moreImage" format="reference|color" />
     </declare-styleable>
-     <!--列表控件-->
-    <declare-styleable name="LeaveRecordView">
-        <attr name="itemColor" format="color" />
-        <attr name="itemDivider" format="dimension" />
-        <attr name="itemDividerHeight" format="dimension" />
-    </declare-styleable>
+    
     <!--垂直滑轮控件-->
     <declare-styleable name="WheelView">
         <!--单元格高度-->
