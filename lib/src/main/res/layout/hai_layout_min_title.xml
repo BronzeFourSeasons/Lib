@@ -4,32 +4,60 @@
     android:layout_height="@dimen/height_title">
 
     <TextView
-        android:id="@+id/id_textBack"
+        android:id="@+id/id_textTitle"
         style="@style/text_max"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:textColor="@color/white"
-        android:typeface="monospace" />
+        android:typeface="monospace"
+        android:background="#FF1E90FF"/>
 
     <ImageView
-        android:layout_width="@dimen/height_menu"
+        android:layout_width="@dimen/margin_title"
         android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
         android:contentDescription="@string/st_left"
-        android:padding="@dimen/margin_default"
+        android:padding="@dimen/margin"
         android:src="@mipmap/ic_left" />
 
     <TextView
-        android:id="@+id/id_textTitle"
+        android:id="@+id/id_textBack"
         style="@style/text_max"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/height_menu"
-        android:layout_marginStart="@dimen/height_menu"
+        android:layout_marginRight="@dimen/height_menu"
         android:gravity="center_vertical"
+        android:text="@string/revert"
         android:textColor="@color/white"
-        android:typeface="monospace"
-        android:text="@string/revert"/>
+        android:typeface="monospace" />
+
+    <ImageView
+        android:id="@+id/image_more"
+        android:layout_width="@dimen/margin_title"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        android:contentDescription="@string/st_left"
+        android:padding="@dimen/margin"
+        android:src="@mipmap/ic_right"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="@dimen/margin_title"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        android:gravity="center"
+        android:padding="@dimen/margin"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/id_return"
@@ -37,4 +65,12 @@
         android:layout_height="match_parent"
         android:background="@null" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/id_more"
+        android:layout_width="75dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@null" />
+
+</RelativeLayout
