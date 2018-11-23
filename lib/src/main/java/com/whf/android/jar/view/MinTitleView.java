@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,7 +25,8 @@ import com.whf.android.jar.R;
  */
 public class MinTitleView extends LinearLayout {
 
-    private TextView text, textBack;
+    private TextView text, textBack, textViewMore;
+    private ImageView imageViewMore;
     private Context context;
     private AttributeSet attrs;
     private View.OnClickListener onClickListener;
@@ -48,8 +50,12 @@ public class MinTitleView extends LinearLayout {
      */
     private void initView() {
         LayoutInflater.from(context).inflate(R.layout.hai_layout_min_title, this, true);
+
         text = getView(R.id.id_textTitle);
         textBack = getView(R.id.id_textBack);
+        imageViewMore = getView(R.id.image_more);
+        textViewMore = getView(R.id.tv_more);
+
         findViewById(R.id.id_return).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,10 +65,16 @@ public class MinTitleView extends LinearLayout {
                 ((Activity) getContext()).finish();
             }
         });
+
     }
 
+    @Override
     public void setOnClickListener(View.OnClickListener l) {
         onClickListener = l;
+    }
+
+    public void setOnClickMoreListener(View.OnClickListener l) {
+        findViewById(R.id.id_more).setOnClickListener(l);
     }
 
     /**
@@ -84,49 +96,78 @@ public class MinTitleView extends LinearLayout {
     private void onTypedArray() {
         @SuppressLint("Recycle")
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MinTitleView);
-        String title = a.getString(R.styleable.MinTitleView_text);
+        String titleBack = a.getString(R.styleable.MinTitleView_textBack);
+        String title =  a.getString(R.styleable.MinTitleView_android_text);
         int titleColor = a.getColor(R.styleable.MinTitleView_color, 0xff1e90ff);
+        String textMore = a.getString(R.styleable.MinTitleView_textMore);
+        int resMore = a.getResourceId(R.styleable.MinTitleView_moreImage, 0xff1e90ff);
+        int is = a.getInteger(R.styleable.MinTitleView_isMoreDisplay, -3);
         if (title != null && !"".equals(title)) {
+            setText(title);
+        }
+        if (titleBack != null && !"".equals(titleBack)) {
             setTextBack(title);
         }
+        
         textBack.setBackgroundColor(titleColor);
         BarColorT.initSystemBar((Activity) getContext(), titleColor);
+
+        if (textMore != null && !"".equals(textMore)) {
+            textViewMore.setText(textMore);
+        }
+        if (resMore != 0) {
+            imageViewMore.setImageResource(resMore);
+        }
+        switch (is) {
+            case -1:
+                imageViewMore.setVisibility(VISIBLE);
+                break;
+            case -2:
+                textViewMore.setVisibility(VISIBLE);
+                break;
+            default:
+                imageViewMore.setVisibility(GONE);
+                textViewMore.setVisibility(GONE);
+                break;
+        }
     }
-	
-   /**
+
+    /**
      * 设置标题
      */
     public void setText(String title) {
-        textBack.setText(title);
+        text.setText(title);
     }
-	
-   /**
+
+    /**
      * 设置返回展示
      */
     public void setTextBack(String title) {
-        text.setText(title);
+        textBack.setText(title);
     }
-   /**
+
+    /**
      * 设置标题颜色
      */
     public void setTextColor(int color) {
         textBack.setTextColor(color);
     }
-   /**
+
+    /**
      * 设置返回颜色
      */
     public void setTextBackColor(int color) {
         text.setTextColor(color);
     }
-	
+
     /**
      * 设置背景颜色
      */
     @Override
-	public void setBackgroundResource(int resId) {
+    public void setBackgroundResource(int resId) {
         textBack.setBackgroundResource(resId);
     }
-	
+
     /**
      * 设置背景颜色
      */
@@ -134,7 +175,7 @@ public class MinTitleView extends LinearLayout {
     public void setBackgroundColor(int color) {
         textBack.setBackgroundColor(color);
     }
-		
+
     /**
      * 设置背景颜色
      */
