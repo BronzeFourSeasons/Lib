@@ -36,9 +36,15 @@ public class MinTitleView extends LinearLayout {
         this.context = context;
         initView();
     }
-
     public MinTitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
+        this.attrs = attrs;
+        initView();
+        onTypedArray();
+    }
+    public MinTitleView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         this.context = context;
         this.attrs = attrs;
         initView();
@@ -99,7 +105,7 @@ public class MinTitleView extends LinearLayout {
         String title = a.getString(R.styleable.MinTitleView_android_text);
         int titleColor = a.getColor(R.styleable.MinTitleView_color, 0xFF1E90FF);
         String textMore = a.getString(R.styleable.MinTitleView_textMore);
-        int resMore = a.getResourceId(R.styleable.MinTitleView_moreImage, 0xff1e90ff);
+        int resMore = a.getResourceId(R.styleable.MinTitleView_moreImage, R.mipmap.ic_right);
         int is = a.getInteger(R.styleable.MinTitleView_isMoreDisplay, -3);
         if (title != null && !"".equals(title)) {
             setText(title);
@@ -107,18 +113,19 @@ public class MinTitleView extends LinearLayout {
         if (titleBack != null && !"".equals(titleBack)) {
             setTextBack(titleBack);
         }
+        if(titleColor != 0){
         text.setBackgroundColor(titleColor);
         BarColorT.initSystemBar((Activity) getContext(), titleColor);
-
+        }
         if (textMore != null && !"".equals(textMore)) {
             textViewMore.setText(textMore);
-        }
-        if (resMore != 0) {
-            imageViewMore.setImageResource(resMore);
         }
         switch (is) {
             case -1:
                 imageViewMore.setVisibility(VISIBLE);
+                if (resMore != 0) {
+                   imageViewMore.setImageResource(resMore);
+                }
                 break;
             case -2:
                 textViewMore.setVisibility(VISIBLE);
