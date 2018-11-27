@@ -44,14 +44,17 @@ public abstract class BaseFragmentActivity extends AppCompatActivity {
         FragPageAdapter mAdapter = new FragPageAdapter(getSupportFragmentManager(),
                 myViewPager(), myFragments, myRadioButton());
         myViewPager().setAdapter(mAdapter);
-        myRadioGroup().setOnCheckedChangeListener((group, checkedId) -> {
-            RadioButton mRButton = findViewById(checkedId);
-            int i = 0;
-            for (RadioButton mRB : myRadioButton()) {
-                if (mRB == mRButton) {
-                    myViewPager().setCurrentItem(i);
+        myRadioGroup().setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                RadioButton mRButton = findViewById(checkedId);
+                int i = 0;
+                for (RadioButton mRB : myRadioButton()) {
+                    if (mRB == mRButton) {
+                        myViewPager().setCurrentItem(i);
+                    }
+                    i++;
                 }
-                i++;
             }
         });
     }
