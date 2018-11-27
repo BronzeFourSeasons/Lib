@@ -16,7 +16,7 @@
         <!--显示内容-->
         <attr name="textMore" format="string" />
         <!--该内容颜色-->
-        <attr name="moreImage" format="reference|color" />
+        <attr name="moreImage" format="reference" />
     </declare-styleable>
      <!--  列表   -->
      <declare-styleable name="LeaveRecordView">
