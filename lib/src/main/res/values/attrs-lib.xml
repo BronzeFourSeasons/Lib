@@ -8,7 +8,7 @@
         <!--该内容颜色-->
         <attr name="color" format="color" />
         <!--判断是图片还是文字-->
-        <attr name="isMoreDisplay" format="integer">
+        <attr name="isMoreDisplay" >
             <enum name="display_image" value="-1" />
             <enum name="display_text" value="-2" />
             <enum name="display_no" value="-3" />
