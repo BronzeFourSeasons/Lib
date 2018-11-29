@@ -1,6 +1,6 @@
 package com.whf.android.jar.base;
 
-
+import android.content.Context;
 import android.widget.BaseAdapter;
 
 import java.util.List;
@@ -15,12 +15,14 @@ import java.util.List;
 public abstract class BaseCommonAdapter<T> extends BaseAdapter {
 
     protected List<T> mData;
+    protected Context context;
 
     /**
      * @param mList:List Date
      */
-    public BaseCommonAdapter(List<T> mList) {
+    public BaseCommonAdapter(Context cont,List<T> mList) {
         super();
+        this.context = cont;
         this.mData = mList;
     }
 
