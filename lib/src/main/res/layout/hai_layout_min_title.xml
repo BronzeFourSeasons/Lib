@@ -43,7 +43,7 @@
         android:layout_marginEnd="@dimen/margin_default"
         android:layout_marginRight="@dimen/margin_default"
         android:contentDescription="@string/st_left"
-        android:padding="@dimen/margin"
+        android:padding="@dimen/margin_default"
         android:src="@mipmap/ic_right"
         android:visibility="gone" />
 
