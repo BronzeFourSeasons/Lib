@@ -64,6 +64,19 @@ public class HolidayChoicePop extends PopupWindow implements View.OnClickListene
         mWheelView.setOnSelectListener(onWheelViewListener);
     }
 
+    /*
+     * 性别设置
+     */
+    public void setSex(){
+        ArrayList<String> list = new ArrayList<>();
+        list.add("男");
+        list.add("女");
+        setItems(list);
+    }
+    
+    /**
+     * 数据设置
+     */
     public void setItems(ArrayList<String> list) {
         mWheelView.setData(list);
     }
@@ -78,7 +91,7 @@ public class HolidayChoicePop extends PopupWindow implements View.OnClickListene
         //设置SelectPicPopupWindow弹出窗体的宽
         this.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
         //设置SelectPicPopupWindow弹出窗体的高
-        this.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        this.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
         //设置SelectPicPopupWindow弹出窗体可点击
         this.setFocusable(true);
         //实例化一个ColorDrawable颜色为半透明
