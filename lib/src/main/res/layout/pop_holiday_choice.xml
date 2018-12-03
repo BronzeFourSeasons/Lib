@@ -4,25 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ivory" >
+    android:background="#36000000"
+    android:gravity="bottom"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_confirm"
-        style="@style/text_max"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:padding="15dp"
-        android:text="@string/confirm"
-        tools:ignore="RelativeOverlap" />
-
-    <com.whf.android.jar.view.WheelView
-        android:id="@+id/id_WheelView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_below="@id/tv_confirm"
-        app:selectedTextColor="@color/black"
-        app:normalTextColor="@color/dark_grey"/>
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_menu"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                style="@style/text_max"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_menu"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/margin_default"
+                android:text="@string/confirm"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <com.whf.android.jar.view.WheelView
+            android:id="@+id/id_WheelView"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@color/white"
+            app:lineColor="@color/ivory"
+            app:maskHeight="@dimen/height_menu"
+            app:normalTextColor="@color/dark_grey"
+            app:normalTextSize="18sp"
+            app:selectedTextColor="@color/black"
+            app:selectedTextSize="24sp"
+            app:unitHeight="@dimen/height_menu" />
+    </LinearLayout>
 
 </RelativeLayout>
