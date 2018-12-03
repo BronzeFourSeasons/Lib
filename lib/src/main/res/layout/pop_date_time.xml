@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/view_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ivory"
+    android:background="#36000000"
+    android:gravity="bottom"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical">
+        android:layout_height="@dimen/height_menu"
+        android:background="@color/white">
 
         <android.support.design.widget.TabLayout
             android:id="@+id/id_TabLayout"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_menu"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_default"
+            app:tabIndicatorColor="@color/indigo"
             app:tabSelectedTextColor="@color/black"
-            app:tabTextColor="@color/dark_grey"
             app:tabTextAppearance="@android:style/TextAppearance.Holo.Large"
-            app:tabIndicatorColor="@color/indigo">
+            app:tabTextColor="@color/dark_grey">
 
             <android.support.design.widget.TabItem
                 android:id="@+id/id_tab_item_date"
@@ -40,10 +43,11 @@
             android:id="@+id/tv_confirm"
             style="@style/text_max"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_menu"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:padding="15dp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_default"
             android:text="@string/confirm"
             tools:ignore="RelativeOverlap" />
 
@@ -52,6 +56,8 @@
     <com.whf.android.jar.change.ChangeNoViewPager
         android:id="@+id/id_ChangeNoViewPager"
         android:layout_width="match_parent"
-        android:layout_height="260dp" />
+        android:layout_height="260dp"
+        android:background="@color/white"
+        android:padding="@dimen/margin_default" />
 
 </LinearLayout>
