@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_menu"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/margin_default"
+    android:paddingRight="@dimen/margin_default">
+
+    <CheckBox
+        android:id="@+id/hai_check"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/margin_title"
+        android:button="@drawable/checkbox_style"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/hai_check_text"
+        style="@style/text_default"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_menu"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_default"
+        android:paddingRight="@dimen/margin_default"
+        android:text="@string/app_name" />
+        
+</LinearLayout>
