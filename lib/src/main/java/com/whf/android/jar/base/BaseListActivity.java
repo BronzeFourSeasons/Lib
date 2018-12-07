@@ -1,9 +1,9 @@
 package com.whf.android.jar.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -27,7 +27,7 @@ import java.util.Map;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public class BaseListActivity extends Activity {
+public class BaseListActivity extends AppCompatActivity {
 
     protected Context context;
     protected TextView tvTitle, tvMore;
