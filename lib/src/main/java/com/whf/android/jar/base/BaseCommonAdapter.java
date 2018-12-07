@@ -20,12 +20,21 @@ public abstract class BaseCommonAdapter<T> extends BaseAdapter {
     /**
      * @param mList:List Date
      */
+    public BaseCommonAdapter(List<T> mList) {
+        super();
+        this.mData = mList;
+    }
+
+     /**
+     * @param cont:Context 
+     * @param mList:List Date
+     */
     public BaseCommonAdapter(Context cont,List<T> mList) {
         super();
         this.context = cont;
         this.mData = mList;
     }
-
+    
     /**
      * Total number
      */
