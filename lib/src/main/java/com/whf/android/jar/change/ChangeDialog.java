@@ -87,6 +87,8 @@ public class ChangeDialog extends Dialog {
             public void onClick(View v) {
                 if (yesOnclickListener != null) {
                     yesOnclickListener.onYesClick();
+                }else{
+                    ChangeDialog.this.dismiss();
                 }
             }
         });
@@ -96,6 +98,8 @@ public class ChangeDialog extends Dialog {
             public void onClick(View v) {
                 if (noOnclickListener != null) {
                     noOnclickListener.onNoClick();
+                }else{
+                    ChangeDialog.this.dismiss();
                 }
             }
         });
