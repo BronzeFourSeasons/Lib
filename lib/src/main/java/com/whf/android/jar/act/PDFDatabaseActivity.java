@@ -71,6 +71,14 @@ public class PDFDatabaseActivity extends AppCompatActivity implements DownloadFi
         updateLayout();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (adapter != null) {
+            adapter.close();
+        }
+    }
+
     /*更新视图*/
     private void updateLayout() {
         pdf_root.removeAllViewsInLayout();
