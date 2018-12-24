@@ -92,7 +92,7 @@ public class PDFDatabaseActivity extends AppCompatActivity implements DownloadFi
             pb_bar.setVisibility(View.GONE);
         }
         LogT.e("异常>>" + e.getMessage());
-        ToastT.makeTextShort(this, "数据加载错误");
+        ToastT.makeTextShort(this, "文件未找到,可能已删除");
     }
 
     @Override
