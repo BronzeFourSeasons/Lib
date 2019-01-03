@@ -1,7 +1,7 @@
 package com.whf.android.jar.base;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -18,7 +18,7 @@ import com.whf.android.jar.LogT;
  * @author wang.hai.fang
  * @since 2.5.0
  */
-public class BaseWebActivity extends Activity {
+public class BaseWebActivity extends AppCompatActivity {
 
     private final static String MIME_TYPE = "text/html";
     private final static String ENCODING = "utf-8";
