@@ -10,9 +10,9 @@ import android.util.Base64;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.whf.android.jar.base.BaseApplication;
-import com.whf.android.jar.util.CircleImageUtil;
 import com.whf.android.jar.util.RoundImageUtil;
 
 import java.io.ByteArrayOutputStream;
@@ -27,6 +27,8 @@ import java.io.IOException;
  */
 public final class GlideT {
 
+    private static final int ROUND = 5;
+
     /**
      * add image
      *
@@ -37,7 +39,6 @@ public final class GlideT {
     public static void onImage(Context act, String url, ImageView view) {
         Glide.with(act)
                 .load(url)
-                .error(R.mipmap.image_error)
                 .into(view);
     }
 
@@ -62,7 +63,6 @@ public final class GlideT {
         if (act != null) {
             Glide.with(act)
                     .load(url)
-                    .error(R.mipmap.image_error)
                     .into(view);
         }
     }
@@ -79,7 +79,6 @@ public final class GlideT {
         if (!act.isDestroyed()) {
             Glide.with(act)
                     .load(url)
-                    .error(R.mipmap.image_error)
                     .into(view);
         }
     }
@@ -96,7 +95,6 @@ public final class GlideT {
         if (fragment != null && fragment.getActivity() != null) {
             Glide.with(fragment)
                     .load(url)
-                    .error(R.mipmap.image_error)
                     .into(view);
         }
     }
@@ -112,43 +110,24 @@ public final class GlideT {
         if (fragment != null && fragment.getActivity() != null) {
             Glide.with(fragment)
                     .load(url)
-                    .error(R.mipmap.image_error)
                     .into(view);
         }
     }
 
-    /**
-     * add GIF image
-     *
-     * @param act:Context
-     * @param url:gif     image
-     * @param view:View
-     */
-    public static void onGif(Context act, String url, ImageView view) {
-        Glide.with(act)
-                .load(url)
-                .error(R.mipmap.image_error)
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-                .into(view);
-
-    }
 
     /**
-     * add GIF image
+     * load normal  for circle img Circular
      *
      * @param act:Context
-     * @param url:gif     image
-     * @param view:View
+     * @param url:Picture path (local, network)
+     * @param view:view
      */
-    public static void onGif(Context act, Integer url, ImageView view) {
+    public static void onCircularImage(Context act, int url, ImageView view) {
         Glide.with(act)
                 .load(url)
-                .asGif()
-                .error(R.mipmap.image_error)
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(view);
     }
-
 
     /**
      * load normal  for circle img Circular
@@ -160,9 +139,53 @@ public final class GlideT {
     public static void onCircularImage(Context act, String url, ImageView view) {
         Glide.with(act)
                 .load(url)
-                .placeholder(android.R.mipmap.sym_def_app_icon)
-                .error(R.mipmap.image_error)
-                .transform(new CircleImageUtil(act))
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                .into(view);
+    }
+
+    /**
+     * load normal  for round img round
+     *
+     * @param act:Context
+     * @param url:Picture path (local, network)
+     * @param view:view
+     */
+    public static void onRoundImage(Context act, int url, ImageView view) {
+        Glide.with(act)
+                .load(url)
+                .apply(RequestOptions.bitmapTransform(new RoundImageUtil()))
+                .into(view);
+    }
+
+    /**
+     * load normal  for round img round
+     *
+     * @param act:Context
+     * @param url:Picture path (local, network)
+     * @param view:view
+     * @param dp:Fillet   size(The minimum is 4)
+     */
+    public static void onRoundImage(Context act, int url, ImageView view, int dp) {
+        if (dp < ROUND) {
+            dp = ROUND;
+        }
+        Glide.with(act)
+                .load(url)
+                .apply(RequestOptions.bitmapTransform(new RoundImageUtil(dp)))
+                .into(view);
+    }
+
+    /**
+     * load normal  for round img round
+     *
+     * @param act:Context
+     * @param url:Picture path (local, network)
+     * @param view:view
+     */
+    public static void onRoundImage(Context act, String url, ImageView view) {
+        Glide.with(act)
+                .load(url)
+                .apply(RequestOptions.bitmapTransform(new RoundImageUtil()))
                 .into(view);
     }
 
@@ -175,26 +198,12 @@ public final class GlideT {
      * @param dp:Fillet   size(The minimum is 4)
      */
     public static void onRoundImage(Context act, String url, ImageView view, int dp) {
-        onRoundImage(act, url, view, android.R.mipmap.sym_def_app_icon, dp);
-    }
-
-    /**
-     * load normal  for round img round
-     *
-     * @param act:Context
-     * @param url:Picture path (local, network)
-     * @param view:view
-     * @param dp:Fillet   size(The minimum is 4)
-     */
-    public static void onRoundImage(Context act, String url, ImageView view, int icon, int dp) {
-        if (dp < 4) {
-            dp = 4;
+        if (dp < ROUND) {
+            dp = ROUND;
         }
         Glide.with(act)
                 .load(url)
-                .placeholder(icon)
-                .error(icon)
-                .transform(new RoundImageUtil(act, dp))
+                .apply(RequestOptions.bitmapTransform(new RoundImageUtil(dp)))
                 .into(view);
     }
 
@@ -209,7 +218,6 @@ public final class GlideT {
         Bitmap bitmap = null;
         try {
             LogT.i("图片>" + photoBack.length());
-            //byte[] bitmapArray = Base64.decode(photoBack, Base64.DEFAULT);
             byte[] bitmapArray = Base64.decode(photoBack.split(",")[1], Base64.DEFAULT);
             LogT.i("图片bitmapArray>" + bitmapArray.length);
             bitmap = BitmapFactory.decodeByteArray(bitmapArray, 0, bitmapArray.length);
