@@ -29,6 +29,7 @@ public class DiaInputActivity extends Activity {
     public final static int INT_INTENT = 1550;
     public final static String KEY = "key";
     public final static String TITLE = "title";
+    public final static String TEXT = "text";
     public final static String MESSAGE = "message";
     public final static String BUTTON_1 = "BUTTON_1";
     public final static String BUTTON_2 = "BUTTON_2";
@@ -67,6 +68,10 @@ public class DiaInputActivity extends Activity {
         String message = intent.getStringExtra(MESSAGE);
         if (!TextUtils.isEmpty(message)) {
             messageTv.setHint(message);
+        }
+        String text = intent.getStringExtra(TEXT);
+        if (!TextUtils.isEmpty(text)) {
+            messageTv.setText(text);
         }
         String btnNo = intent.getStringExtra(BUTTON_1);
         if (!TextUtils.isEmpty(btnNo)) {
