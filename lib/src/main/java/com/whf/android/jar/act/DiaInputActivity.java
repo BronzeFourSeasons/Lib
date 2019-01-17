@@ -72,6 +72,7 @@ public class DiaInputActivity extends Activity {
         String text = intent.getStringExtra(TEXT);
         if (!TextUtils.isEmpty(text)) {
             messageTv.setText(text);
+            messageTv.setSelection(text.length());
         }
         String btnNo = intent.getStringExtra(BUTTON_1);
         if (!TextUtils.isEmpty(btnNo)) {
