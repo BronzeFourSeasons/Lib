@@ -53,5 +53,17 @@ public abstract class BaseCommonAdapter<T> extends BaseAdapter {
         return position;
     }
 
+    public List<T> getData() {
+        return mData;
+    }
 
+    public boolean hasData() {
+        return mData != null && mData.size() > 0;
+    }
+
+    public void addData(List<T> mList) {
+        mData.addAll(mList);
+        notifyDataSetChanged();
+    }
+    
 }
