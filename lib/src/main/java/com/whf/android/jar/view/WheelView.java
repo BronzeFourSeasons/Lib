@@ -88,7 +88,7 @@ public class WheelView extends View {
     /**
      * 显示多少个内容
      */
-    private int itemNumber = 7;
+    private int itemNumber = 3;
     /**
      * 默认字体颜色
      */
