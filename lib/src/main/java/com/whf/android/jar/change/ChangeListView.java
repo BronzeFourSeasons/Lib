@@ -13,6 +13,8 @@ import android.widget.ListView;
  */
 public class ChangeListView extends ListView {
 
+    private DataChangedListener dataChangedListener;
+    
     /**
      * @param context:Context
      */
@@ -39,4 +41,14 @@ public class ChangeListView extends ListView {
         super.onMeasure(widthMeasureSpec, expandSpec);
     }
 
+    @Override
+    protected void handleDataChanged() {
+        super.handleDataChanged();
+        dataChangedListener.onSuccess();
+    }
+
+    public void setDataChangedListener(DataChangedListener dataChangedListener) {
+        this.dataChangedListener = dataChangedListener;
+    }
+    
 }
