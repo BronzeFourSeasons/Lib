@@ -47,8 +47,19 @@ public class ChangeListView extends ListView {
         dataChangedListener.onSuccess();
     }
 
+    /**
+     * 设置定位的事假
+     *
+     * @param dataChangedListener:DataChangedListener
+     */
     public void setDataChangedListener(DataChangedListener dataChangedListener) {
         this.dataChangedListener = dataChangedListener;
     }
-    
+     
+    public interface DataChangedListener {
+        /**
+         *定位到位置
+         */
+        void onSuccess();
+    }
 }
