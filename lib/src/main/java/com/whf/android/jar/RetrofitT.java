@@ -2,6 +2,7 @@ package com.whf.android.jar;
 
 import android.support.annotation.NonNull;
 
+import com.whf.android.jar.net.BaseUrlInterceptor;
 import com.whf.android.jar.net.OnProgressListener;
 import com.whf.android.jar.net.ProgressDownloadInterceptor;
 import com.whf.android.jar.tool.InterceptorT;
@@ -13,10 +14,12 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -58,18 +61,14 @@ public abstract class RetrofitT {
      *
      * @return Retrofit
      */
-    protected static Retrofit getRetrofit(@NonNull String baseUrl,boolean bool) {
-        if (bool) {
-            if (null == mOkHttpClient) {
-                mOkHttpClient = getOkHttpClient();
-            }
-            mRetrofit = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .client(mOkHttpClient)
-                    .build();
-        }
+    protected static Retrofit getBaseRetrofit(@NonNull String baseUrl) {
+        mOkHttpClient = getOkHttpClient(baseUrl);
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(mOkHttpClient)
+                .build();
         return mRetrofit;
     }
 
@@ -133,7 +132,7 @@ public abstract class RetrofitT {
                 .Builder()
                 .addInterceptor(new Interceptor() {
                     @Override
-                    public Response intercept(Chain chain) throws IOException {
+                    public Response intercept(@NonNull Chain chain) throws IOException {
                         Request.Builder builder = chain.request().newBuilder();
                         builder.addHeader("Content-Type", "application/x-www-form-urlencoded");
                         return chain.proceed(builder.build());
@@ -141,4 +140,22 @@ public abstract class RetrofitT {
                 }).build();
     }
 
+    @NonNull
+    private static OkHttpClient getOkHttpClient(String baseUrl) {
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        return new OkHttpClient
+                .Builder()
+                .addInterceptor(new BaseUrlInterceptor(baseUrl))
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(@NonNull Chain chain) throws IOException {
+                        Request.Builder builder = chain.request().newBuilder();
+                        builder.addHeader("Content-Type", "application/x-www-form-urlencoded");
+                        return chain.proceed(builder.build());
+                    }
+                })
+                .addNetworkInterceptor(httpLoggingInterceptor)
+                .build();
+    }
 }
