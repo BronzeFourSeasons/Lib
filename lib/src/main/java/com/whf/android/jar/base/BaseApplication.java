@@ -15,6 +15,8 @@ import com.whf.android.jar.util.ResolutionUtil;
 public class BaseApplication extends Application {
 
     protected static Context context;
+    protected static String baseUrl = "Http://www.daidu.com";
+    
     /**
      * Current login status
      */
@@ -31,6 +33,9 @@ public class BaseApplication extends Application {
         return context;
     }
 
+    public static String getBaseUrl() {
+        return baseUrl;
+    }
 
     public User getLoginUser() {
         return loginUser;
