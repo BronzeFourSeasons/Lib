@@ -44,7 +44,9 @@ public class ChangeListView extends ListView {
     @Override
     protected void handleDataChanged() {
         super.handleDataChanged();
-        dataChangedListener.onSuccess();
+        if(dataChangedListener != null){
+            dataChangedListener.onSuccess();
+        }
     }
 
     /**
