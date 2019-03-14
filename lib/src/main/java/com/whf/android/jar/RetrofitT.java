@@ -137,7 +137,13 @@ public abstract class RetrofitT {
                         builder.addHeader("Content-Type", "application/x-www-form-urlencoded");
                         return chain.proceed(builder.build());
                     }
-                }).build();
+                })
+                .connectTimeout(10, TimeUnit.SECONDS)
+                //Set read timeout
+                .readTimeout(300, TimeUnit.SECONDS)
+                //Set write timeout
+                .writeTimeout(300, TimeUnit.SECONDS)
+                .build();
     }
 
     @NonNull
