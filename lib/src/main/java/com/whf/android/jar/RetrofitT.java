@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import me.jessyan.retrofiturlmanager.RetrofitUrlManager;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -45,7 +46,10 @@ public abstract class RetrofitT {
     protected static Retrofit getRetrofit(@NonNull String baseUrl) {
         if (null == mRetrofit) {
             if (null == mOkHttpClient) {
-                mOkHttpClient = getOkHttpClient();
+                mOkHttpClient = RetrofitUrlManager
+                        .getInstance()
+                        .with(getOkHttpClient())
+                        .build();
             }
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
@@ -127,7 +131,7 @@ public abstract class RetrofitT {
     }
     
     @NonNull
-    private static OkHttpClient getOkHttpClient() {
+    private static OkHttpClient.Builder getOkHttpClient() {
         return new OkHttpClient
                 .Builder()
                 .addInterceptor(new Interceptor() {
@@ -142,8 +146,7 @@ public abstract class RetrofitT {
                 //Set read timeout
                 .readTimeout(300, TimeUnit.SECONDS)
                 //Set write timeout
-                .writeTimeout(300, TimeUnit.SECONDS)
-                .build();
+                .writeTimeout(300, TimeUnit.SECONDS);
     }
 
     @NonNull
